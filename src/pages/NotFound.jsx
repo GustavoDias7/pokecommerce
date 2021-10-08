@@ -1,5 +1,4 @@
 import React from "react";
-import MainHeader from "../components/MainHeader";
 
 const NotFound = () => {
   const [currentURL, setCurrentURL] = React.useState("");

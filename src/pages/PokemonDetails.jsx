@@ -1,7 +1,6 @@
 import React from "react";
 import Cart from "../components/Cart";
 import Details from "../components/Details";
-import MainHeader from "../components/MainHeader";
 
 const PokemonDetails = () => {
   return (
