@@ -53,12 +53,12 @@ export const GlobalStorage = ({ children }) => {
             ? new PokemonResponseData(
                 data.name,
                 data.base_experience,
-                data.sprites.front_default
+                data.sprites.other.dream_world.front_default
               )
             : new PokemonResponseData(
                 data.name,
                 data.base_experience,
-                data.sprites.front_default,
+                data.sprites.other.dream_world.front_default,
                 data.abilities,
                 data.height
               )
@@ -80,7 +80,7 @@ export const GlobalStorage = ({ children }) => {
           datas.push({
             name: data.name,
             price: data.base_experience,
-            photo: data.sprites.front_default,
+            photo: data.sprites.other.dream_world.front_default,
           })
         );
     }
