@@ -9,15 +9,12 @@ const NotFound = () => {
   }, []);
 
   return (
-    <>
-      <MainHeader />
-      <section>
-        <div className="container">
-          <h1>Page Not Found.</h1>
-          <h2>"{currentURL}" does not exist. :(</h2>
-        </div>
-      </section>
-    </>
+    <section>
+      <div className="container">
+        <h1>Page Not Found.</h1>
+        <h2>"{currentURL}" does not exist. :(</h2>
+      </div>
+    </section>
   );
 };
 
