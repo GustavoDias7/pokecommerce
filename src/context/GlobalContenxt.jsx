@@ -10,6 +10,7 @@ export const GlobalStorage = ({ children }) => {
   const [total, setTotal] = React.useState(0);
   const [searchError, setSearchError] = React.useState(false);
   const [buy, setBuy] = React.useState(false);
+  const [hasCart, setHasCart] = React.useState(false);
 
   function addCart(newPokemon) {
     const hasName = cart.map((cart) => cart.name).includes(newPokemon.name);
@@ -123,6 +124,8 @@ export const GlobalStorage = ({ children }) => {
     buy,
     setBuy,
     handleBuy,
+    hasCart,
+    setHasCart,
   };
 
   return (

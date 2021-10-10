@@ -1,5 +1,4 @@
 import React from "react";
-import Cart from "../components/Cart";
 import Details from "../components/Details";
 
 const PokemonDetails = () => {
@@ -7,7 +6,6 @@ const PokemonDetails = () => {
     <main>
       <div className="container">
         <Details />
-        <Cart />
       </div>
     </main>
   );
