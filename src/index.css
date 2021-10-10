@@ -100,7 +100,6 @@ main > .container {
   flex-wrap: wrap;
   justify-content: space-between;
   width: 75%;
-  padding-right: 20px;
 }
 .product {
   width: 30%;
@@ -124,8 +123,8 @@ main > .container {
 }
 .product img {
   display: block;
-  width: auto;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   margin: auto;
 }
 .product button {
@@ -161,6 +160,7 @@ main > .container {
   height: 480px;
   max-height: 480px;
   padding: 20px;
+  margin-left: 20px;
   background-color: #ffffff;
 }
 .cart .content {
@@ -206,6 +206,53 @@ main > .container {
 .cart footer button:hover:disabled {
   background-color: #aaaaaa;
   color: #000000;
+}
+
+/* pokemon-details */
+.details {
+  width: 75%;
+}
+.full-product {
+  display: flex;
+}
+.full-product .left {
+  min-width: 400px;
+}
+.full-product .left img {
+  width: 100%;
+  max-width: 400px;
+  max-height: 400px;
+}
+.full-product .right {
+  margin-left: 20px;
+}
+.full-product .right header {
+  display: flex;
+  justify-content: space-between;
+}
+.full-product h2 {
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+.full-product .price {
+  font-size: 2rem;
+}
+.fa-star {
+  font-size: 1.25rem;
+  color: #f2c832;
+  margin-top: 10px;
+}
+.full-product .description {
+  margin-top: 10px;
+}
+.full-product .abilities,
+.full-product .height {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+.full-product .abilities ul {
+  padding-left: 15px;
 }
 
 /* modal */
@@ -271,6 +318,9 @@ main > .container {
 
   .catalog {
     width: 100%;
-    padding: 0;
+  }
+
+  .cart {
+    margin-left: 0;
   }
 }

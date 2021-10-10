@@ -1,11 +1,10 @@
 import React from "react";
 
-const url = "https://pokeapi.co/api/v2/pokemon/";
-
 export const GlobalContext = React.createContext();
 
 export const GlobalStorage = ({ children }) => {
   const [response, setResponse] = React.useState(null);
+  const [fullResponse, setFullResponse] = React.useState(null);
   const [initial, setInitial] = React.useState([]);
   const [cart, setCart] = React.useState([]);
   const [total, setTotal] = React.useState(0);
@@ -17,7 +16,6 @@ export const GlobalStorage = ({ children }) => {
     if (!hasName) {
       setCart([...cart, newPokemon]);
       setTotal(total + newPokemon.price);
-      console.log("add", newPokemon.name);
     }
   }
 
@@ -35,38 +33,58 @@ export const GlobalStorage = ({ children }) => {
   }
 
   class PokemonResponseData {
-    constructor(name, price, photo, abilities, height) {
+    constructor(name, price, photo, abilities, height, description) {
       this.name = name;
       this.price = price;
       this.photo = photo;
       this.abilities = abilities;
       this.height = height;
+      this.description = description;
     }
   }
 
-  async function fetchPokemon(search, fullDetails = false) {
+  const url = "https://pokeapi.co/api/v2/pokemon/";
+
+  async function fetchPokemon(search) {
     await fetch(url + search)
       .then((response) => response.json())
       .then((data) => {
         setResponse(
-          !fullDetails
-            ? new PokemonResponseData(
-                data.name,
-                data.base_experience,
-                data.sprites.other.dream_world.front_default
-              )
-            : new PokemonResponseData(
-                data.name,
-                data.base_experience,
-                data.sprites.other.dream_world.front_default,
-                data.abilities,
-                data.height
-              )
+          new PokemonResponseData(
+            data.name,
+            data.base_experience,
+            data.sprites.other.dream_world.front_default
+          )
         );
         setSearchError(false);
-        console.log(response);
       })
       .catch(() => setSearchError(true));
+  }
+
+  async function fetchFullPokemon(search) {
+    await fetch(url + search)
+      .then((res) => res.json())
+      .then(getDescription)
+      .catch(() => setSearchError(true));
+  }
+  async function getDescription(myData) {
+    const dataUrl = myData.species.url;
+    await fetch(dataUrl)
+      .then((res) => res.json())
+      .then((data) => {
+        setFullResponse(
+          new PokemonResponseData(
+            myData.name,
+            myData.base_experience,
+            myData.sprites.other.dream_world.front_default,
+            myData.abilities,
+            myData.height,
+            data.flavor_text_entries
+              .find((flavor) => flavor.language.name === "en")
+              .flavor_text.replace("POKéMON", "Pokémon")
+          )
+        );
+      });
   }
 
   async function initialFetch() {
@@ -90,7 +108,10 @@ export const GlobalStorage = ({ children }) => {
 
   const values = {
     response,
+    fullResponse,
+    setFullResponse,
     fetchPokemon,
+    fetchFullPokemon,
     initial,
     initialFetch,
     cart,

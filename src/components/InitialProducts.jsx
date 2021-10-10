@@ -8,7 +8,6 @@ const InitialProducts = () => {
   React.useEffect(() => {
     initialFetch();
   }, []);
-  console.log("initial");
 
   return (
     <>
