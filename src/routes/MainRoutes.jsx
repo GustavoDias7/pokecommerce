@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Checkout from "../pages/Checkout";
 import NotFound from "../pages/NotFound";
-import PokemonDetails from "../pages/PokemonDetails";
+import Search from "../pages/Search";
 import { GlobalStorage } from "../context/GlobalContenxt";
 import MainHeader from "../components/MainHeader";
 
@@ -15,7 +15,7 @@ const MainRoutes = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="checkout" element={<Checkout />} />
-          <Route path="pokemon/:id" element={<PokemonDetails />} />
+          <Route path="search/:id" element={<Search />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </GlobalStorage>

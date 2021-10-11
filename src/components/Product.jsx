@@ -10,12 +10,12 @@ const Product = ({ infos }) => {
     <article className="product">
       <div className="content">
         <div className="img-container">
-          <Link to={"pokemon/" + name}>
+          <Link to={"search/" + name}>
             <img src={photo} alt={name} />
           </Link>
         </div>
         <h2>
-          <Link to={"pokemon/" + name}>{name}</Link>
+          <Link to={"search/" + name}>{name}</Link>
         </h2>
         <p>R$ {price}</p>
         <button className="gn-button" onClick={() => addCart(infos)}>

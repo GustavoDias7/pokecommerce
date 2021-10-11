@@ -1,10 +1,9 @@
 import React from "react";
-import { GlobalContext } from "../context/GlobalContenxt";
+import { useNavigate } from "react-router-dom";
 
 const SearchProduct = () => {
-  const { fetchPokemon } = React.useContext(GlobalContext);
   const [search, setSearch] = React.useState("");
-  const [loading, setLoading] = React.useState(false);
+  let navigate = useNavigate();
 
   function handleChange({ target }) {
     setSearch(target.value);
@@ -12,15 +11,12 @@ const SearchProduct = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (search.length === 0) return;
-    setLoading(true);
-    await fetchPokemon(search.toLowerCase());
-    setLoading(false);
+    if (search.length !== 0) navigate("search/" + search);
+    setSearch("");
   }
 
   return (
     <form onSubmit={handleSubmit} className="search-form">
-      {loading && <i className="fa fa-circle-o-notch fa-spin"></i>}
       <input type="text" value={search} onChange={handleChange} />
       <button type="submit">
         <i className="fa fa-search"></i>

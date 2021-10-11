@@ -10,11 +10,13 @@ const InitialProducts = () => {
   }, []);
 
   return (
-    <>
-      {initial.map((pokemon, index) => {
-        return <Product key={index} infos={pokemon} />;
-      })}
-    </>
+    <section className="initial-products">
+      <div className="container">
+        {initial.map((pokemon, index) => {
+          return <Product key={index} infos={pokemon} />;
+        })}
+      </div>
+    </section>
   );
 };
 

@@ -1,16 +1,12 @@
 import React from "react";
 import Banners from "../components/Banner";
-import Catalog from "../components/Catalog";
+import InitialProducts from "../components/InitialProducts";
 
 const Home = () => {
   return (
     <>
       <Banners />
-      <main>
-        <div className="container">
-          <Catalog />
-        </div>
-      </main>
+      <InitialProducts />
     </>
   );
 };

@@ -85,26 +85,29 @@ export const GlobalStorage = ({ children }) => {
               .flavor_text.replace("POKéMON", "Pokémon")
           )
         );
-      });
+        setSearchError(false);
+      })
+      .catch(() => setSearchError(true));
   }
 
   async function initialFetch() {
     const datas = [];
 
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 8; i++) {
       const randomId = Math.floor(Math.random() * 200) + 1;
       await fetch(url + randomId)
         .then((response) => response.json())
-        .then((data) =>
+        .then((data) => {
           datas.push({
             name: data.name,
             price: data.base_experience,
             photo: data.sprites.other.dream_world.front_default,
-          })
-        );
+          });
+        });
     }
 
     setInitial(datas);
+    setSearchError(false);
   }
 
   const values = {
