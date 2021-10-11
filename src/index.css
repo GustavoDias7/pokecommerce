@@ -79,6 +79,26 @@ a:hover {
 .error-search {
   padding-top: 30px;
 }
+.gn-button {
+  display: block;
+  min-width: 120px;
+  min-height: 30px;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #663399;
+  transition: all 0.4s ease 0s;
+  border-radius: 4px;
+}
+.gn-button:focus {
+  background-color: #430b7c;
+}
+.gn-button:hover {
+  color: #f1f1f1;
+  background-color: #7c46b3;
+}
 
 /* === HEADER === */
 #main-header {
@@ -318,24 +338,6 @@ a:hover {
   width: 100%;
   border: none;
 }
-.gn-button {
-  display: block;
-  min-height: 30px;
-  font-size: 1rem;
-  color: #000000;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background-color: #aaaaaa;
-  transition: all 0.4s ease 0s;
-}
-.gn-button:focus {
-  background-color: #888888;
-}
-.gn-button:hover {
-  color: #00000099;
-  background-color: #bbbbbbd9;
-}
 
 /* SERACH */
 .full-product {
@@ -381,6 +383,14 @@ a:hover {
 }
 .full-product .abilities ul {
   padding-left: 15px;
+}
+.full-product footer button {
+  display: inline-block;
+  margin-top: 30px;
+  margin-right: 5px;
+}
+.full-product footer button:last-child {
+  margin-right: 0;
 }
 
 /* modal */

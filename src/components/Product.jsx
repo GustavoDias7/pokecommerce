@@ -18,7 +18,7 @@ const Product = ({ infos }) => {
           <Link to={"search/" + name}>{name}</Link>
         </h2>
         <p>R$ {price}</p>
-        <button className="gn-button" onClick={() => addCart(infos)}>
+        <button className="gn-button" onClick={() => addCart({ name, price })}>
           Add to cart
         </button>
       </div>
