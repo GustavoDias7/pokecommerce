@@ -212,10 +212,41 @@ a:hover {
   color: #000000;
 }
 
+/* === BANNER === */
+#banner-container {
+  padding-top: 50px;
+}
+.banner {
+  background-color: #aaa;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 300px;
+  width: 100%;
+}
+#banner-1 {
+  background-image: url(./assets/images/banner-1.jpg);
+}
+#banner-2 {
+  background-image: url(./assets/images/banner-2.jpg);
+}
+#banner-3 {
+  background-image: url(./assets/images/banner-3.jpg);
+}
+/* Arrows */
+.slick-prev {
+  z-index: 1;
+  left: 15px !important;
+}
+.slick-next {
+  right: 15px !important;
+}
 /* === CATALOG === */
+main {
+  padding-top: 50px;
+}
 main > .container {
   display: flex;
-  padding-top: 20px;
 }
 .catalog {
   display: flex;

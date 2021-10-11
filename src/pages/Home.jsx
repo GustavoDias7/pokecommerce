@@ -1,13 +1,17 @@
 import React from "react";
+import Banners from "../components/Banner";
 import Catalog from "../components/Catalog";
 
 const Home = () => {
   return (
-    <main>
-      <div className="container">
-        <Catalog />
-      </div>
-    </main>
+    <>
+      <Banners />
+      <main>
+        <div className="container">
+          <Catalog />
+        </div>
+      </main>
+    </>
   );
 };
 
