@@ -2,6 +2,7 @@ import React from "react";
 import SearchProduct from "./SearchProduct";
 import Cart from "../components/Cart";
 import { GlobalContext } from "../context/GlobalContenxt";
+import { Link } from "react-router-dom";
 
 const MainHeader = () => {
   const { hasCart, setHasCart, cart } = React.useContext(GlobalContext);
@@ -13,9 +14,9 @@ const MainHeader = () => {
   return (
     <header id="main-header">
       <div className="container">
-        <a href="/" className="logo">
+        <Link to="/" className="logo">
           <h1>PokeCommerce</h1>
-        </a>
+        </Link>
         <div className="right">
           <SearchProduct />
           <div className="cart-container">

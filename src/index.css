@@ -40,6 +40,45 @@ a:hover {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9;
 }
+.loading {
+  position: fixed;
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+  width: 80px;
+  height: 80px;
+}
+.loading svg {
+  animation: loading-rotate 1.28973s linear infinite;
+  transform-origin: center center;
+}
+.loading circle {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: loading-dash 2s ease-in-out infinite;
+  stroke-width: 4px;
+}
+@keyframes loading-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loading-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+.error-search {
+  padding-top: 30px;
+}
 
 /* === HEADER === */
 #main-header {
@@ -214,7 +253,7 @@ a:hover {
 
 /* === BANNER === */
 #banner-container {
-  padding-top: 50px;
+  padding-top: 30px;
 }
 .banner {
   background-color: #aaa;
