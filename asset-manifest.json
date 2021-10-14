@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/pokecommerce/static/css/main.91c8711b.chunk.css",
+    "main.js": "/pokecommerce/static/js/main.367ace94.chunk.js",
+    "main.js.map": "/pokecommerce/static/js/main.367ace94.chunk.js.map",
+    "runtime-main.js": "/pokecommerce/static/js/runtime-main.869775cd.js",
+    "runtime-main.js.map": "/pokecommerce/static/js/runtime-main.869775cd.js.map",
+    "static/css/2.1c444ef3.chunk.css": "/pokecommerce/static/css/2.1c444ef3.chunk.css",
+    "static/js/2.3b36fb56.chunk.js": "/pokecommerce/static/js/2.3b36fb56.chunk.js",
+    "static/js/2.3b36fb56.chunk.js.map": "/pokecommerce/static/js/2.3b36fb56.chunk.js.map",
+    "index.html": "/pokecommerce/index.html",
+    "static/css/2.1c444ef3.chunk.css.map": "/pokecommerce/static/css/2.1c444ef3.chunk.css.map",
+    "static/css/main.91c8711b.chunk.css.map": "/pokecommerce/static/css/main.91c8711b.chunk.css.map",
+    "static/js/2.3b36fb56.chunk.js.LICENSE.txt": "/pokecommerce/static/js/2.3b36fb56.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/pokecommerce/static/media/banner-3.a621d8e0.jpg",
+    "static/media/slick-theme.css": "/pokecommerce/static/media/slick.c94f7671.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.869775cd.js",
+    "static/css/2.1c444ef3.chunk.css",
+    "static/js/2.3b36fb56.chunk.js",
+    "static/css/main.91c8711b.chunk.css",
+    "static/js/main.367ace94.chunk.js"
+  ]
+}
