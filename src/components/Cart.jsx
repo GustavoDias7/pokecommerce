@@ -22,12 +22,13 @@ const CartProduct = ({ info, onClick }) => {
 };
 
 const Cart = () => {
-  const { cart, total, removeCart, handleBuy } =
+  const { cart, total, removeCart, handleBuy, setHasCart, hasCart } =
     React.useContext(GlobalContext);
   const navegate = useNavigate();
 
   function handleClick() {
     if (handleBuy()) {
+      setHasCart(!hasCart);
       navegate("/checkout");
     }
   }
@@ -65,7 +66,7 @@ const Cart = () => {
               onClick={handleClick}
               disabled={total <= 0}
             >
-              Buy now
+              Checkout
             </button>
           </div>
         </footer>

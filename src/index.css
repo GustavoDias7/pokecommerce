@@ -27,6 +27,9 @@ a {
 a:hover {
   color: #555;
 }
+li {
+  list-style-type: none;
+}
 .container {
   max-width: 1100px;
   margin: auto;
@@ -98,6 +101,11 @@ a:hover {
 .gn-button:hover {
   color: #f1f1f1;
   background-color: #7c46b3;
+}
+.gn-button:disabled,
+.gn-button:hover:disabled {
+  background-color: #aaaaaa;
+  cursor: not-allowed;
 }
 
 /* === HEADER === */
@@ -259,13 +267,8 @@ a:hover {
   justify-content: space-between;
   padding: 10px 0;
 }
-.cart footer button {
+.cart footer .gn-button {
   width: 100%;
-}
-.cart footer button:disabled,
-.cart footer button:hover:disabled {
-  background-color: #aaaaaa;
-  cursor: not-allowed;
 }
 
 /* === BANNER === */
@@ -418,6 +421,51 @@ a:hover {
   margin-right: 0;
 }
 
+/* CHECKOUT */
+.checkout {
+  width: 100%;
+  max-width: 518px;
+  margin: auto;
+}
+.checkout input {
+  display: block;
+}
+.checkout input {
+  width: 100%;
+  max-width: 564px;
+  height: 55px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  color: #666;
+  font-size: 1rem;
+  padding: 0 8px;
+  background-position: calc(100% - 16px) center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  transition: border 0.3s;
+  outline: none;
+}
+.checkout input:focus {
+  border-color: #7a5cfa;
+}
+/* invalid input */
+.checkout input.invalid {
+  border: 1px solid #eb5757 !important;
+}
+.checkout input ~ p.invalid-message {
+  display: none;
+  position: absolute;
+  left: 8px;
+  bottom: 1px;
+  line-height: 18px;
+  color: #eb5757;
+  font-size: 0.75rem;
+}
+.checkout input.invalid ~ p.invalid-message {
+  display: block;
+}
+
 /* modal */
 .modal {
   position: fixed;
@@ -430,22 +478,17 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9;
 }
 .modal .content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
+  position: relative;
+  margin: 20px;
+  width: 100%;
   max-width: 300px;
-  height: 300px;
+  height: min-content;
   background-color: #fefefe;
   border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  padding: 20px;
   animation: popup 0.4s;
 }
 @keyframes popup {
@@ -456,7 +499,7 @@ a:hover {
     transform: scale(1.2);
   }
 }
-.modal .close-modal {
+.modal .close {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -464,8 +507,22 @@ a:hover {
   height: 30px;
   border-radius: 30px;
   border: none;
-  border: 2px solid #aaa;
+  color: #555;
+  background-color: #ddd;
   cursor: pointer;
+}
+
+/* Buy Modal */
+.buy .content {
+  text-align: center;
+}
+.buy p {
+  margin: 20px 0;
+}
+.buy a {
+  display: block;
+  color: #663399;
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
